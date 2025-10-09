@@ -8,18 +8,18 @@ import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 
 // Import client logos
-import africanUnionLogo from "@assets/African-union_1755615310456.png";
-import sanlamLogo from "@assets/Sanlam_1755615310458.png";
-import sarbLogo from "@assets/SARB_1755615310457.png";
-import allanGrayLogo from "@assets/AllanGray_1755615310456.png";
-import angloGoldLogo from "@assets/AngloGold_1755615310456.png";
-import feedzaiLogo from "@assets/feedzai_1755615310457.png";
-import truworthsLogo from "@assets/Truworths_1755615310459.png";
-import discoveryLogo from "@assets/discovery-vitality_1755615310457.png";
-import officeLogo from "@assets/office-logo_1755615310457.png";
-import pepsicoLogo from "@assets/pepsico_1755615310458.png";
-import philipMorrisLogo from "@assets/Philip Morris International_1755615310458.png";
-import standardBankLogo from "@assets/standard-bank_1755615310459.png";
+import africanUnionLogo from "@assets/African-union_1755615310456.webp";
+import sanlamLogo from "@assets/Sanlam_1755615310458.webp";
+import sarbLogo from "@assets/SARB_1755615310457.webp";
+import allanGrayLogo from "@assets/AllanGray_1755615310456.webp";
+import angloGoldLogo from "@assets/AngloGold_1755615310456.webp";
+import feedzaiLogo from "@assets/feedzai_1755615310457.webp";
+import truworthsLogo from "@assets/Truworths_1755615310459.webp";
+import discoveryLogo from "@assets/discovery-vitality_1755615310457.webp";
+import officeLogo from "@assets/office-logo_1755615310457.webp";
+import pepsicoLogo from "@assets/pepsico_1755615310458.webp";
+import philipMorrisLogo from "@assets/Philip Morris International_1755615310458.webp";
+import standardBankLogo from "@assets/standard-bank_1755615310459.webp";
 
 export default function CorporateHome() {
   return (
