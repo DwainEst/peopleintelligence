@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoPath from "@assets/People Intelligence logo_1754983700211.png";
+import logoPath from "@assets/People Intelligence logo_1754983700211.webp";
 
 interface NavigationProps {
   variant: "corporate" | "christian";
