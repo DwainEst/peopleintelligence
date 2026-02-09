@@ -1,43 +1,44 @@
-# Force HTTPS redirect - GoDaddy compatible (no loops)
+# === Force HTTPS redirect ===
 RewriteEngine On
-# Only redirect if HTTPS is definitely off (prevents loops)
+# Only redirect if HTTPS is off (prevents loops)
 RewriteCond %{HTTPS} !=on
 RewriteCond %{HTTP_HOST} ^(www\.)?peopleintelligence\.co\.za$ [NC]
 RewriteRule ^(.*)$ https://www.peopleintelligence.co.za/$1 [R=301,L]
 
-# Handle client-side routing for SPA
+# === SPA client-side routing ===
+# Serve index.html for non-file/non-directory URLs
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]
 
-# Enhanced security headers
+# === Security headers ===
 <IfModule mod_headers.c>
-    # Force HTTPS for future visits - Enhanced for immediate effect
+    # HSTS: Force HTTPS for future visits
     Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
-    
-    # Additional mixed content protection
+
+    # Mixed content upgrade (secondary to HSTS)
     Header always set X-Forwarded-Proto "https" env=HTTPS
-    
-    # Upgrade insecure requests to HTTPS - Enhanced for GoDaddy hosting
-    Header always set Content-Security-Policy "upgrade-insecure-requests; default-src 'self' https:; font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https:; connect-src 'self' https:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; media-src 'self' https:"
-    
+
+    # Content Security Policy (CSP) - tightened for security
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; media-src 'self';"
+
     # Prevent clickjacking
     Header always set X-Frame-Options "SAMEORIGIN"
-    
+
     # Prevent MIME type sniffing
     Header always set X-Content-Type-Options "nosniff"
-    
-    # Enable XSS protection
+
+    # Enable XSS protection in older browsers
     Header always set X-XSS-Protection "1; mode=block"
-    
+
     # Referrer policy for privacy
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
-    
-    # Permissions policy
+
+    # Permissions policy (disable unused features)
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 </IfModule>
 
-# Cache static files for better performance
+# === Cache static files for performance ===
 <IfModule mod_expires.c>
     ExpiresActive On
     ExpiresByType text/css "access plus 1 month"
@@ -50,7 +51,7 @@ RewriteRule . /index.html [L]
     ExpiresByType image/svg+xml "access plus 1 month"
 </IfModule>
 
-# Gzip compression for better performance
+# === Gzip compression for performance ===
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/plain
     AddOutputFilterByType DEFLATE text/html
