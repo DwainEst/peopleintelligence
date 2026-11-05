@@ -59,7 +59,7 @@ export default function ServicesSection({ variant }: ServicesSectionProps) {
   ];
   
   return (
-    <section id="services" className="pt-20 pb-0" style={{ backgroundColor: isCorporate ? '#0F3010' : '#1a384c' }}>
+    <section id="services" className={`pt-20 pb-0 ${isCorporate ? 'bg-[#0F3010]' : 'bg-[#1a384c]'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
           <div className="mb-6">

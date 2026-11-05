@@ -16,7 +16,7 @@ export default function ChristianCoaching() {
 
 
       {/* Our Story Section */}
-      <section id="about" className="pt-24 pb-12 relative" style={{ backgroundColor: '#1a384c' }}>
+      <section id="about" className="pt-24 pb-12 relative bg-[#1a384c]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="mb-4 sm:mb-8">
@@ -100,7 +100,7 @@ export default function ChristianCoaching() {
       <ServicesSection variant="christian" />
 
       {/* Final Results Section */}
-      <section className="py-12" style={{ backgroundColor: '#808080' }}>
+      <section className="py-12 bg-[#808080]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             
@@ -141,7 +141,7 @@ export default function ChristianCoaching() {
       </section>
       
       {/* Trusted by Leading Organisations */}
-      <section className="py-8 overflow-hidden" style={{ backgroundColor: '#1a384c' }}>
+      <section className="py-8 overflow-hidden bg-[#1a384c]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="text-center max-w-3xl mx-auto">

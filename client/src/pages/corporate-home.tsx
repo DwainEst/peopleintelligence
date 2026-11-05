@@ -41,7 +41,7 @@ export default function CorporateHome() {
 
 
       {/* Our Story Section */}
-      <section id="about" className="pt-24 pb-0 relative" style={{ backgroundColor: '#0F3010' }}>
+      <section id="about" className="pt-24 pb-0 relative bg-[#0F3010]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-gray-200 font-light max-w-4xl mx-auto mb-8">
@@ -60,7 +60,7 @@ export default function CorporateHome() {
       <ServicesSection variant="corporate" />
 
       {/* Final Results Section */}
-      <section className="py-12" style={{ backgroundColor: '#0F3010' }}>
+      <section className="py-12 bg-[#0F3010]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-base sm:text-lg lg:text-xl text-gray-200 leading-relaxed max-w-4xl mx-auto font-light mb-12">
