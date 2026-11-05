@@ -6,22 +6,6 @@
     
       <!-- Canonical (change per page) -->
       <link rel="canonical" href="https://www.peopleintelligence.co.za/">
-
-      <!-- Critical CSS for above-the-fold content -->
-      <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{background:#f8fafc;font-family:system-ui,-apple-system,sans-serif}
-        #root{min-height:100vh}
-        .min-h-screen{min-height:100vh}
-        .bg-slate-50{background:#f8fafc}
-        .text-white{color:#fff}
-        .relative{position:relative}
-        .aspect-video{aspect-ratio:16/9;position:relative}
-        .aspect-video::before{content:"";display:block;padding-bottom:56.25%}
-        .flex{display:flex}
-        .flex-col{flex-direction:column}
-        .overflow-hidden{overflow:hidden}
-      </style>
         
       <!-- SEO Meta -->
       <title>People Intelligence - Danelle Esterhuizen | Corporate Coaching & Leadership Development</title>
@@ -29,15 +13,6 @@
       <meta name="keywords" content="coaching, leadership development, emotional intelligence, corporate training, team development, executive coaching, South Africa, Danelle Esterhuizen">
       <meta name="author" content="Danelle Esterhuizen">
       <meta name="robots" content="index, follow">
-        
-      <!-- Async CSS loading -->
-      <link rel="preload" href="/assets/index-BCMj4Qo7.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-      <noscript><link rel="stylesheet" href="/assets/index-BCMj4Qo7.css"></noscript>
-
-      <!-- OPTIMIZED FONT LOADING -->
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500&display=swap&display=swap">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500&display=swap&display=swap" media="print" onload="this.media='all'">
     
       <!-- Open Graph / Facebook -->
       <meta property="og:type" content="website">
@@ -60,7 +35,9 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-      <!-- Preload Google Fonts (no inline style needed, CSP-compliant) -->
+      <!-- Google Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
     
@@ -68,20 +45,16 @@
       <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
       <link rel="icon" type="image/webp" href="/favicon/favicon-96x96.webp" sizes="96x96">
       <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
-      <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.webp" sizes="180x180">
+      <link rel="apple-touch-icon" href="/favicon/web-app-manifest-512x512.png">
       <link rel="manifest" href="/favicon/site.webmanifest">
     
       <!-- Preload OG image -->
       <link rel="preload" href="/people-intelligence-og.webp" as="image" type="image/webp">
-    
-      <!-- Main CSS -->
-      <link rel="stylesheet" crossorigin href="/assets/index-BCMj4Qo7.css">
-    
-      <!-- Main JS -->
-      <script type="module" crossorigin src="/assets/index-DiBjvn3f.js"></script>
+
     </head>
 
   <body>
     <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

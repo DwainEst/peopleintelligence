@@ -42,3 +42,5 @@ yarn-error.log*
 *.userosscache
 *.sln.docstates
 Thumbs.db
+# Local build/test output
+deploy/

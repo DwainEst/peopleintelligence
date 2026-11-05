@@ -1,15 +1,11 @@
-import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
-import AboutSection from "@/components/about-section";
 import ServicesSection from "@/components/services-section";
-import TestimonialsSection from "@/components/testimonials-section";
 
-import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
-import enneagramLogo from "@assets/enneagram_1756979375893.webp";
-import gtdLogo from "@assets/gtd_1756979375894.webp";
-import insightsLogo from "@assets/Insights_1756979375894.webp";
-import neurozoneLogo from "@assets/neurozone_logo_1756979375895.webp";
+import enneagramLogo from "@/assets/accreditation-enneagram.webp";
+import gtdLogo from "@/assets/accreditation-gtd.webp";
+import insightsLogo from "@/assets/accreditation-insights.webp";
+import neurozoneLogo from "@/assets/accreditation-neurozone.webp";
 
 
 export default function ChristianCoaching() {

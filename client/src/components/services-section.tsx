@@ -1,12 +1,11 @@
-import collageImage from "@assets/collage_1755600187940.webp";
-import mushroomImage from "@assets/picsar-DE20dY6R9Vk-unsplash_1755609198002.webp";
-import mushroomClusterImage from "@assets/phoenix-han-ARCaazwh4xw-unsplash_1755609264082.webp";
-import facilitationImage from "@assets/AdobeStock_535833932_1755609472878.jpeg";
-import forestPhoto from "@assets/rae-galatas-EZjtqTaGF3w-unsplash_1756975833248.webp";
-import enneagramLogo from "@assets/enneagram_1756975870832.webp";
-import gtdLogo from "@assets/gtd_1756975870832.webp";
-import insightsLogo from "@assets/Insights_1756975870832.webp";
-import neurozoneLogo from "@assets/neurozone_logo_1756975870833.webp";
+import mushroomImage from "@/assets/mushroom.webp";
+import mushroomClusterImage from "@/assets/mushroom-cluster.webp";
+import facilitationImage from "@/assets/facilitation.webp";
+import forestPhoto from "@/assets/forest.webp";
+import enneagramLogo from "@/assets/accreditation-enneagram.webp";
+import gtdLogo from "@/assets/accreditation-gtd.webp";
+import insightsLogo from "@/assets/accreditation-insights.webp";
+import neurozoneLogo from "@/assets/accreditation-neurozone.webp";
 
 interface ServicesSectionProps {
   variant: "corporate" | "christian";
