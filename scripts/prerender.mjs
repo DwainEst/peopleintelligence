@@ -33,7 +33,7 @@ const PAGES = [
   {
     route: "/christian-coaching",
     file: "christian-coaching.html",
-    title: "Christian Leadership Coaching South Africa | People Intelligence",
+    title: "Christian Leadership Coaching SA | People Intelligence",
     description:
       "Faith-based leadership coaching, ministry team development and Christian leadership workshops with Danelle Esterhuizen. Book a coaching chemistry call today.",
     sources: ["client/src/pages/christian-coaching.tsx"],
