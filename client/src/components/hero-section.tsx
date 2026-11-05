@@ -4,6 +4,8 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import myceliumImage from "@/assets/hero-mycelium.webp";
 import lighthouseImage from "@/assets/hero-lighthouse.webp";
+import myceliumSmall from "@/assets/hero-mycelium-640.webp";
+import lighthouseSmall from "@/assets/hero-lighthouse-640.webp";
 import logoPath from "@/assets/logo.webp";
 
 interface HeroSectionProps {
@@ -16,18 +18,22 @@ export default function HeroSection({ variant }: HeroSectionProps) {
   
   return (
     <section id="home" className="text-white relative aspect-video flex flex-col overflow-hidden">
-      <div 
-        className="absolute inset-0 bg-cover bg-no-repeat"
-        style={{ 
-          backgroundImage: `url(${isCorporate ? myceliumImage : lighthouseImage})`,
-          backgroundPosition: 'center center',
-          transform: 'scale(1)',
-          filter: isCorporate ? 'contrast(1.3) saturate(1.4) brightness(1.1)' : 'none',
-          willChange: 'transform'
-        }}
-      >
-        <link rel="preload" as="image" href={isCorporate ? myceliumImage : lighthouseImage} />
-      </div>
+      {/* Hero image as a real <img> so the browser finds it in the HTML and
+          fetches it first (it is the Largest Contentful Paint element) */}
+      <img
+        src={isCorporate ? myceliumImage : lighthouseImage}
+        srcSet={isCorporate
+          ? `${myceliumSmall} 640w, ${myceliumImage} 1024w`
+          : `${lighthouseSmall} 640w, ${lighthouseImage} 1248w`}
+        sizes="100vw"
+        width={isCorporate ? 1024 : 1248}
+        height={isCorporate ? 576 : 832}
+        alt=""
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+        style={isCorporate ? { filter: 'contrast(1.3) saturate(1.4) brightness(1.1)' } : undefined}
+      />
       {isCorporate && <div className="absolute inset-0 bg-black bg-opacity-50" />}
       
       {/* Navigation integrated into hero */}
@@ -39,6 +45,8 @@ export default function HeroSection({ variant }: HeroSectionProps) {
                 <img 
                   src={logoPath} 
                   alt="People Intelligence Logo" 
+                  width={555}
+                  height={192}
                   className="h-16 sm:h-20 lg:h-24 w-auto mt-3 sm:mt-6"
                 />
               </div>
