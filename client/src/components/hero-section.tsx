@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import myceliumImage from "@assets/mycelium2_1755598996880.webp";
-import lighthouseImage from "@assets/Gemini_Generated_Image_vegiozvegiozvegi_1756988868227.webp";
-import logoPath from "@assets/People_Intelligence_website_Logo__1756732910464.webp";
+import myceliumImage from "@/assets/hero-mycelium.webp";
+import lighthouseImage from "@/assets/hero-lighthouse.webp";
+import logoPath from "@/assets/logo.webp";
 
 interface HeroSectionProps {
   variant: "corporate" | "christian";

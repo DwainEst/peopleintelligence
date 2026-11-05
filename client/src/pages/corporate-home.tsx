@@ -1,25 +1,21 @@
-import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
-import AboutSection from "@/components/about-section";
 import ServicesSection from "@/components/services-section";
-import TestimonialsSection from "@/components/testimonials-section";
 
-import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 
 // Import client logos
-import africanUnionLogo from "@assets/African-union_1755615310456.webp";
-import sanlamLogo from "@assets/Sanlam_1755615310458.webp";
-import sarbLogo from "@assets/SARB_1755615310457.webp";
-import allanGrayLogo from "@assets/AllanGray_1755615310456.webp";
-import angloGoldLogo from "@assets/AngloGold_1755615310456.webp";
-import feedzaiLogo from "@assets/feedzai_1755615310457.webp";
-import truworthsLogo from "@assets/Truworths_1755615310459.webp";
-import discoveryLogo from "@assets/discovery-vitality_1755615310457.webp";
-import officeLogo from "@assets/office-logo_1755615310457.webp";
-import pepsicoLogo from "@assets/pepsico_1755615310458.webp";
-import philipMorrisLogo from "@assets/Philip Morris International_1755615310458.webp";
-import standardBankLogo from "@assets/standard-bank_1755615310459.webp";
+import africanUnionLogo from "@/assets/client-african-union.webp";
+import sanlamLogo from "@/assets/client-sanlam.webp";
+import sarbLogo from "@/assets/client-sarb.webp";
+import allanGrayLogo from "@/assets/client-allangray.webp";
+import angloGoldLogo from "@/assets/client-anglogold.webp";
+import feedzaiLogo from "@/assets/client-feedzai.webp";
+import truworthsLogo from "@/assets/client-truworths.webp";
+import discoveryLogo from "@/assets/client-discovery-vitality.webp";
+import officeLogo from "@/assets/client-office-logo.webp";
+import pepsicoLogo from "@/assets/client-pepsico.webp";
+import philipMorrisLogo from "@/assets/client-philip-morris-international.webp";
+import standardBankLogo from "@/assets/client-standard-bank.webp";
 
 export default function CorporateHome() {
   return (

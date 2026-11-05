@@ -1,6 +1,6 @@
 import { Link } from "wouter";
-import logoPath from "@assets/People_Intelligence_website_Logo__1756732910464.webp";
-import comensaLogo from "@assets/comensa_1756977321299.webp";
+import logoPath from "@/assets/logo.webp";
+import comensaLogo from "@/assets/comensa.webp";
 
 interface FooterProps {
   variant: "corporate" | "christian";
