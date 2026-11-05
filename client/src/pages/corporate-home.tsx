@@ -17,6 +17,22 @@ import pepsicoLogo from "@/assets/client-pepsico.webp";
 import philipMorrisLogo from "@/assets/client-philip-morris-international.webp";
 import standardBankLogo from "@/assets/client-standard-bank.webp";
 
+// Intrinsic sizes (px) let the browser reserve space before each logo loads
+const clientLogos = [
+  { src: africanUnionLogo, alt: "African Union", w: 232, h: 80 },
+  { src: allanGrayLogo, alt: "Allan Gray", w: 260, h: 80 },
+  { src: angloGoldLogo, alt: "AngloGold Ashanti", w: 265, h: 80 },
+  { src: discoveryLogo, alt: "Discovery Vitality", w: 154, h: 80 },
+  { src: feedzaiLogo, alt: "Feedzai", w: 256, h: 80 },
+  { src: officeLogo, alt: "Microsoft Office", w: 320, h: 45 },
+  { src: pepsicoLogo, alt: "PepsiCo", w: 320, h: 74 },
+  { src: philipMorrisLogo, alt: "Philip Morris International", w: 320, h: 78 },
+  { src: sanlamLogo, alt: "Sanlam", w: 320, h: 70 },
+  { src: sarbLogo, alt: "South African Reserve Bank", w: 142, h: 80 },
+  { src: standardBankLogo, alt: "Standard Bank", w: 314, h: 80 },
+  { src: truworthsLogo, alt: "Truworths International", w: 243, h: 80 },
+];
+
 export default function CorporateHome() {
   return (
     <div className="min-h-screen bg-slate-50">
@@ -82,6 +98,34 @@ export default function CorporateHome() {
                 <span className="text-accent-gold mb-2 text-sm uppercase tracking-wide">Location</span>
                 <span className="text-gray-200">South Africa</span>
                 <span className="text-sm text-gray-300 mt-1">(Worldwide Online)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Trusted by Leading Organisations */}
+      <section className="bg-accent-gold py-8 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-gray-700 font-medium mb-6">Trusted by Leading Organisations</p>
+          
+          {/* Scrolling Logos */}
+          <div className="relative">
+            <div className="logo-scroll">
+              <div className="logo-track">
+                {[...clientLogos, ...clientLogos].map((logo, i) => (
+                  <img
+                    key={i}
+                    src={logo.src}
+                    alt={i < clientLogos.length ? logo.alt : ""}
+                    aria-hidden={i >= clientLogos.length || undefined}
+                    width={logo.w}
+                    height={logo.h}
+                    loading="lazy"
+                    decoding="async"
+                    className="logo-item"
+                  />
+                ))}
               </div>
             </div>
           </div>

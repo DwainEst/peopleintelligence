@@ -18,6 +18,10 @@ export default function Footer({ variant }: FooterProps) {
             <img 
               src={logoPath} 
               alt="People Intelligence Logo" 
+              width={555}
+              height={192}
+              loading="lazy"
+              decoding="async"
               className="h-16 w-auto mx-auto cursor-pointer mb-4"
             />
           </a>
@@ -26,6 +30,10 @@ export default function Footer({ variant }: FooterProps) {
             <img 
               src={comensaLogo} 
               alt="COMENSA - Coaches and Mentors of South Africa" 
+              width={251}
+              height={48}
+              loading="lazy"
+              decoding="async"
               className="h-6 w-auto mx-auto object-contain"
             />
           </div>
@@ -36,7 +44,7 @@ export default function Footer({ variant }: FooterProps) {
           
           {isCorporate && (
             <div className="text-center">
-              <h4 className="text-sm font-normal mb-2 uppercase">Services</h4>
+              <p className="text-sm font-normal mb-2 uppercase">Services</p>
               <ul className="space-y-1">
                 <li>
                   <a href="#services" className="text-xs text-gray-300 hover:text-white transition-colors duration-200 tracking-tight">
@@ -63,7 +71,7 @@ export default function Footer({ variant }: FooterProps) {
           )}
           
           <div className="text-center">
-            <h4 className="text-sm font-normal mb-2 uppercase">Quick Links</h4>
+            <p className="text-sm font-normal mb-2 uppercase">Quick Links</p>
             <ul className="space-y-1">
               <li>
                 <a href={isCorporate ? "/" : "/christian-coaching"} className="text-xs text-gray-300 hover:text-white transition-colors duration-200 tracking-tight">

@@ -51,30 +51,46 @@ export default function ChristianCoaching() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-items-center">
             <div className="flex justify-center">
               <img 
-                src={insightsLogo} 
+                src={insightsLogo}
+                width={377}
+                height={101}
+                loading="lazy"
+                decoding="async"
                 alt="Insights Discovery Logo" 
-                className="h-12 object-contain"
+                className="h-12 w-auto object-contain"
               />
             </div>
             <div className="flex justify-center">
               <img 
-                src={neurozoneLogo} 
+                src={neurozoneLogo}
+                width={500}
+                height={125}
+                loading="lazy"
+                decoding="async"
                 alt="Neurozone Logo" 
-                className="h-12 object-contain"
+                className="h-12 w-auto object-contain"
               />
             </div>
             <div className="flex justify-center">
               <img 
-                src={enneagramLogo} 
+                src={enneagramLogo}
+                width={304}
+                height={96}
+                loading="lazy"
+                decoding="async"
                 alt="Enneagram Logo" 
-                className="h-12 object-contain"
+                className="h-12 w-auto object-contain"
               />
             </div>
             <div className="flex justify-center">
               <img 
-                src={gtdLogo} 
+                src={gtdLogo}
+                width={179}
+                height={162}
+                loading="lazy"
+                decoding="async"
                 alt="Getting Things Done Logo" 
-                className="h-10 object-contain"
+                className="h-10 w-auto object-contain"
               />
             </div>
           </div>

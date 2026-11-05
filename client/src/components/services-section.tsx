@@ -2,6 +2,10 @@ import mushroomImage from "@/assets/mushroom.webp";
 import mushroomClusterImage from "@/assets/mushroom-cluster.webp";
 import facilitationImage from "@/assets/facilitation.webp";
 import forestPhoto from "@/assets/forest.webp";
+import mushroomSmall from "@/assets/mushroom-480.webp";
+import mushroomClusterSmall from "@/assets/mushroom-cluster-640.webp";
+import facilitationSmall from "@/assets/facilitation-480.webp";
+import forestSmall from "@/assets/forest-480.webp";
 import enneagramLogo from "@/assets/accreditation-enneagram.webp";
 import gtdLogo from "@/assets/accreditation-gtd.webp";
 import insightsLogo from "@/assets/accreditation-insights.webp";
@@ -19,7 +23,7 @@ export default function ServicesSection({ variant }: ServicesSectionProps) {
       title: "One-on-One Coaching",
       description: "One-on-one coaching provides personalized development through confidential, focused sessions designed around your specific professional goals and challenges. Whether you're navigating career transitions, enhancing performance, building new capabilities, or overcoming obstacles, this individualized approach accelerates your growth and success.",
       bgColor: "bg-accent-gold",
-      textColor: "text-white"
+      textColor: "text-[#152A38]"
     },
     {
       title: "Team Coaching & Group Coaching", 
@@ -38,7 +42,7 @@ export default function ServicesSection({ variant }: ServicesSectionProps) {
       title: "Faith-Based Leadership Coaching",
       description: "Personal coaching that integrates biblical wisdom with leadership development for authentic, purpose-driven leadership.",
       bgColor: "bg-accent-gold",
-      textColor: "text-white"
+      textColor: "text-[#152A38]"
     },
     {
       title: "Ministry Team Development",
@@ -96,7 +100,13 @@ export default function ServicesSection({ variant }: ServicesSectionProps) {
           {/* Row 1: Photo + One-on-One Coaching */}
           <div className="relative min-h-[300px] overflow-hidden order-1">
             <img 
-              src={mushroomImage} 
+              src={mushroomImage}
+              srcSet={`${mushroomSmall} 480w, ${mushroomImage} 756w`}
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              width={756}
+              height={504}
+              loading="lazy"
+              decoding="async"
               alt="Single mushroom emerging from moss - representing individual growth" 
               className="absolute inset-0 w-full h-full object-cover scale-150 object-center"
             />
@@ -105,7 +115,7 @@ export default function ServicesSection({ variant }: ServicesSectionProps) {
             <h3 className={`text-xl sm:text-2xl lg:text-3xl font-light ${services[0].textColor} mb-4 sm:mb-6 leading-tight`}>
               {services[0].title}
             </h3>
-            <p className={`${services[0].textColor} text-base sm:text-lg leading-relaxed font-light opacity-90`}>
+            <p className={`${services[0].textColor} text-base sm:text-lg leading-relaxed font-normal`}>
               {services[0].description} <a href="#contact" className="border-b border-primary-forest hover:text-primary-forest transition-colors duration-200">Schedule a chemistry call.</a>
             </p>
           </div>
@@ -121,7 +131,13 @@ export default function ServicesSection({ variant }: ServicesSectionProps) {
           </div>
           <div className="relative min-h-[300px] overflow-hidden order-3 lg:order-4">
             <img 
-              src={mushroomClusterImage} 
+              src={mushroomClusterImage}
+              srcSet={`${mushroomClusterSmall} 640w, ${mushroomClusterImage} 1280w`}
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              width={1280}
+              height={719}
+              loading="lazy"
+              decoding="async"
               alt="Multiple mushrooms growing together - representing team collaboration" 
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -130,7 +146,13 @@ export default function ServicesSection({ variant }: ServicesSectionProps) {
           {/* Row 3: Photo + Facilitation & Training */}
           <div className="relative min-h-[300px] overflow-hidden order-5">
             <img 
-              src={facilitationImage} 
+              src={facilitationImage}
+              srcSet={`${facilitationSmall} 480w, ${facilitationImage} 756w`}
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              width={756}
+              height={504}
+              loading="lazy"
+              decoding="async"
               alt="Training and facilitation environment - representing skill development" 
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -152,37 +174,59 @@ export default function ServicesSection({ variant }: ServicesSectionProps) {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 items-center">
               <div>
                 <img 
-                  src={insightsLogo} 
+                  src={insightsLogo}
+                  width={377}
+                  height={101}
+                  loading="lazy"
+                  decoding="async"
                   alt="Insights Discovery Logo" 
-                  className="h-8 sm:h-12 object-contain filter brightness-0 invert mx-auto"
+                  className="w-auto h-8 sm:h-12 object-contain filter brightness-0 invert mx-auto"
                 />
               </div>
               <div>
                 <img 
-                  src={neurozoneLogo} 
+                  src={neurozoneLogo}
+                  width={500}
+                  height={125}
+                  loading="lazy"
+                  decoding="async"
                   alt="Neurozone Logo" 
-                  className="h-12 sm:h-20 object-contain mx-auto"
+                  className="w-auto h-12 sm:h-20 object-contain mx-auto"
                 />
               </div>
               <div>
                 <img 
-                  src={enneagramLogo} 
+                  src={enneagramLogo}
+                  width={304}
+                  height={96}
+                  loading="lazy"
+                  decoding="async"
                   alt="Enneagram Logo" 
-                  className="h-8 sm:h-12 object-contain mx-auto"
+                  className="w-auto h-8 sm:h-12 object-contain mx-auto"
                 />
               </div>
               <div>
                 <img 
-                  src={gtdLogo} 
+                  src={gtdLogo}
+                  width={179}
+                  height={162}
+                  loading="lazy"
+                  decoding="async"
                   alt="Getting Things Done Logo" 
-                  className="h-6 sm:h-10 object-contain mx-auto"
+                  className="w-auto h-6 sm:h-10 object-contain mx-auto"
                 />
               </div>
             </div>
           </div>
           <div className="relative min-h-[300px] overflow-hidden order-7 lg:order-8">
             <img 
-              src={forestPhoto} 
+              src={forestPhoto}
+              srcSet={`${forestSmall} 480w, ${forestPhoto} 756w`}
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              width={756}
+              height={1136}
+              loading="lazy"
+              decoding="async"
               alt="Forest moss and mushrooms - representing natural growth frameworks" 
               className="absolute inset-0 w-full h-full object-cover"
             />
