@@ -67,7 +67,7 @@ export default {
         'sage-green': 'var(--sage-green)',
       },
       fontFamily: {
-        sans: ['Nunito Sans', 'Inter', 'Helvetica Neue', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+        sans: ['Montserrat Variable', 'Montserrat', 'Helvetica Neue', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
       },
       keyframes: {
         "accordion-down": {

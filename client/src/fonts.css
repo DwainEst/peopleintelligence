@@ -1,0 +1,16 @@
+/* Montserrat variable font (weights 100-900), latin subset, self-hosted.
+   Source: @fontsource-variable/montserrat (SIL Open Font License). */
+@font-face {
+  font-family: 'Montserrat Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('./assets/fonts/montserrat-latin-wght-normal.woff2') format('woff2-variations');
+}
+@font-face {
+  font-family: 'Montserrat Variable';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('./assets/fonts/montserrat-latin-wght-italic.woff2') format('woff2-variations');
+}

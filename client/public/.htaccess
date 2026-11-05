@@ -33,7 +33,7 @@ ErrorDocument 404 /404.html
     Header always set X-Forwarded-Proto "https" env=HTTPS
 
     # Content Security Policy (CSP) - tightened for security
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https:; connect-src 'self' https://cloudflareinsights.com; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; media-src 'self';"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self'; font-src 'self'; img-src 'self' https:; connect-src 'self' https://cloudflareinsights.com; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; media-src 'self';"
 
     # Prevent clickjacking
     Header always set X-Frame-Options "SAMEORIGIN"
