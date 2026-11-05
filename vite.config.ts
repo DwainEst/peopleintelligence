@@ -13,5 +13,7 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
+    // Emit every image as a file (no data: URIs) so it is cacheable and allowed by the CSP
+    assetsInlineLimit: 0,
   },
 });
