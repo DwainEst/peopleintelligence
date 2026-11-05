@@ -31,8 +31,7 @@ export default function HeroSection({ variant }: HeroSectionProps) {
         alt=""
         fetchPriority="high"
         decoding="async"
-        className="absolute inset-0 w-full h-full object-cover object-center"
-        style={isCorporate ? { filter: 'contrast(1.3) saturate(1.4) brightness(1.1)' } : undefined}
+        className={`absolute inset-0 w-full h-full object-cover object-center ${isCorporate ? '[filter:contrast(1.3)_saturate(1.4)_brightness(1.1)]' : ''}`}
       />
       {isCorporate && <div className="absolute inset-0 bg-black bg-opacity-50" />}
       
@@ -78,16 +77,19 @@ export default function HeroSection({ variant }: HeroSectionProps) {
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsOpen(!isOpen)}
+                aria-label={isOpen ? "Close menu" : "Open menu"}
+                aria-expanded={isOpen}
+                aria-controls="mobile-menu"
                 className={`text-white ${isCorporate ? 'hover:text-secondary-electric' : 'hover:text-gray-500'} bg-black/30 backdrop-blur-sm border border-white/20 hover:bg-black/50`}
               >
-                {isOpen ? <X size={24} /> : <Menu size={24} />}
+                {isOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
               </Button>
             </div>
           </div>
           
           {/* Mobile menu */}
           {isOpen && (
-            <div className="md:hidden absolute top-full left-0 right-0 z-50">
+            <div id="mobile-menu" className="md:hidden absolute top-full left-0 right-0 z-50">
               <div className={`px-4 pt-4 pb-6 space-y-2 ${isCorporate ? 'bg-black/90' : 'bg-white/95'} backdrop-blur-md border-t border-gray-600`}>
                 <a 
                   href={isCorporate ? "/" : "/christian-coaching"}
