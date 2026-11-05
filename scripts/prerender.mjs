@@ -12,6 +12,7 @@ import { readFile, writeFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { execFileSync } from "node:child_process";
+import { buildSchema } from "./schema.mjs";
 // Needs Playwright: `npm i -D playwright && npx playwright install chromium`
 const { chromium } = createRequire(import.meta.url)("playwright");
 
@@ -136,6 +137,17 @@ for (const pg of PAGES) {
     html = html
       .replace(/<meta name="robots" content="[^"]*">/, '<meta name="robots" content="noindex, follow">')
       .replace(/\s*<link rel="canonical"[^>]*>/, "");
+  }
+
+  // JSON-LD structured data (see scripts/schema.mjs)
+  const meta = (re) => (html.match(re)?.[1] || "").replace(/&amp;/g, "&").replace(/&quot;/g, '"');
+  const schema = buildSchema(pg, {
+    title: meta(/<title>([^<]*)<\/title>/),
+    description: meta(/<meta name="description" content="([^"]*)"/),
+  });
+  if (schema) {
+    const json = JSON.stringify(schema, null, 2).replace(/</g, "\\u003c");
+    html = html.replace("</head>", `  <script type="application/ld+json">\n${json}\n    </script>\n  </head>`);
   }
 
   await writeFile(path.join(OUT, pg.file), html);
