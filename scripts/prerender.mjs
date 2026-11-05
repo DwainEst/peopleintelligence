@@ -11,6 +11,7 @@ import { createServer } from "node:http";
 import { readFile, writeFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { createRequire } from "node:module";
+import { execFileSync } from "node:child_process";
 // Needs Playwright: `npm i -D playwright && npx playwright install chromium`
 const { chromium } = createRequire(import.meta.url)("playwright");
 
@@ -20,11 +21,14 @@ const SITE = "https://www.peopleintelligence.co.za";
 
 // One entry per route. `file` is where the HTML is written in dist/.
 // Edit titles/descriptions here — they override the defaults in client/index.html.
+// `sources` are the files whose last git change sets the page's <lastmod> in
+// sitemap.xml. Pages marked `noindex` are left out of the sitemap.
 const PAGES = [
   {
     route: "/",
     file: "index.html",
     // homepage keeps the head from client/index.html (updated in a later step)
+    sources: ["client/src/pages/corporate-home.tsx", "client/index.html"],
   },
   {
     route: "/christian-coaching",
@@ -32,6 +36,7 @@ const PAGES = [
     title: "Christian Leadership Coaching South Africa | People Intelligence",
     description:
       "Faith-based leadership coaching, ministry team development and Christian leadership workshops with Danelle Esterhuizen. Book a coaching chemistry call today.",
+    sources: ["client/src/pages/christian-coaching.tsx"],
   },
   {
     route: "/__404__",
@@ -140,4 +145,25 @@ for (const pg of PAGES) {
 
 await browser.close();
 server.close();
+
+// 4. sitemap.xml — every indexable page, with the date its content last changed
+const shared = ["client/src/components", "client/src/assets"];
+function lastModified(files) {
+  try {
+    const out = execFileSync("git", ["log", "-1", "--format=%cs", "--", ...files], {
+      cwd: ROOT, encoding: "utf8",
+    }).trim();
+    if (out) return out;
+  } catch {}
+  return new Date().toISOString().slice(0, 10); // not a git checkout: use today
+}
+const urls = PAGES.filter((pg) => !pg.noindex).map((pg) => {
+  const loc = SITE + (pg.route === "/" ? "/" : pg.route);
+  return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastModified([...(pg.sources || []), ...shared])}</lastmod>\n  </url>`;
+});
+await writeFile(
+  path.join(OUT, "sitemap.xml"),
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>\n`
+);
+console.log(`✔ sitemap.xml              ${urls.length} URLs`);
 console.log(`\nDone. Upload the contents of ./dist to GoDaddy.`);
