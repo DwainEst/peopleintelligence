@@ -64,7 +64,7 @@ export default function ServicesSection({ variant }: ServicesSectionProps) {
         <div className="text-center mb-8">
           <div className="mb-6">
             {/* Text heading */}
-            <h2 className={`${isCorporate ? 'text-accent-gold' : 'text-gray-500'} text-3xl uppercase font-light`}>
+            <h2 className={`${isCorporate ? 'text-accent-gold' : 'text-gray-400'} text-3xl uppercase font-light`}>
               {isCorporate ? "PATHWAYS TO GROWTH" : "WHY CHRISTIAN COACHING?"}
             </h2>
           </div>
@@ -116,7 +116,7 @@ export default function ServicesSection({ variant }: ServicesSectionProps) {
               {services[0].title}
             </h3>
             <p className={`${services[0].textColor} text-base sm:text-lg leading-relaxed font-normal`}>
-              {services[0].description} <a href="#contact" className="border-b border-primary-forest hover:text-primary-forest transition-colors duration-200">Schedule a chemistry call.</a>
+              {`${services[0].description} `}<a href="#contact" className="border-b border-primary-forest hover:text-primary-forest transition-colors duration-200">Schedule a chemistry call.</a>
             </p>
           </div>
 
@@ -126,7 +126,7 @@ export default function ServicesSection({ variant }: ServicesSectionProps) {
               {services[1].title}
             </h3>
             <p className={`${services[1].textColor} text-base sm:text-lg leading-relaxed font-light opacity-90`}>
-              {services[1].description} <a href="#contact" className={`border-b ${isCorporate ? 'border-accent-gold hover:text-accent-gold' : 'border-gray-500 hover:text-gray-500'} transition-colors duration-200`}>Let's discuss your needs and objectives.</a>
+              {`${services[1].description} `}<a href="#contact" className={`border-b ${isCorporate ? 'border-accent-gold hover:text-accent-gold' : 'border-gray-500 hover:text-gray-500'} transition-colors duration-200`}>Let's discuss your needs and objectives.</a>
             </p>
           </div>
           <div className="relative min-h-[300px] overflow-hidden order-3 lg:order-4">
@@ -162,7 +162,7 @@ export default function ServicesSection({ variant }: ServicesSectionProps) {
               {services[2].title}
             </h3>
             <p className={`${services[2].textColor} text-base sm:text-lg leading-relaxed font-light opacity-90`}>
-              {services[2].description} <a href="#contact" className={`border-b ${isCorporate ? 'border-accent-gold hover:text-accent-gold' : 'border-gray-500 hover:text-gray-500'} transition-colors duration-200`}>Get in touch.</a>
+              {`${services[2].description} `}<a href="#contact" className={`border-b ${isCorporate ? 'border-accent-gold hover:text-accent-gold' : 'border-gray-500 hover:text-gray-500'} transition-colors duration-200`}>Get in touch.</a>
             </p>
           </div>
 

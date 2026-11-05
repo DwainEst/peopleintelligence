@@ -20,7 +20,7 @@ export default function ChristianCoaching() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="mb-4 sm:mb-8">
-              <h2 className="text-gray-500 text-2xl sm:text-3xl uppercase font-light">
+              <h2 className="text-gray-400 text-2xl sm:text-3xl uppercase font-light">
                 ABOUT ME
               </h2>
             </div>
@@ -100,7 +100,7 @@ export default function ChristianCoaching() {
       <ServicesSection variant="christian" />
 
       {/* Final Results Section */}
-      <section className="py-12 bg-[#808080]">
+      <section className="py-12 bg-[#767676]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             

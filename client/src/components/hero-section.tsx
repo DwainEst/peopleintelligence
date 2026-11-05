@@ -30,7 +30,6 @@ export default function HeroSection({ variant }: HeroSectionProps) {
         height={isCorporate ? 576 : 832}
         alt=""
         fetchPriority="high"
-        decoding="async"
         className={`absolute inset-0 w-full h-full object-cover object-center ${isCorporate ? '[filter:contrast(1.3)_saturate(1.4)_brightness(1.1)]' : ''}`}
       />
       {isCorporate && <div className="absolute inset-0 bg-black bg-opacity-50" />}
