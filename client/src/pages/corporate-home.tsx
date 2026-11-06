@@ -1,5 +1,6 @@
 import HeroSection from "@/components/hero-section";
 import ServicesSection from "@/components/services-section";
+import { CALENDLY_URL, EMAIL, PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from "@/lib/contact";
 
 import Footer from "@/components/footer";
 
@@ -77,21 +78,31 @@ export default function CorporateHome() {
                   GET IN TOUCH
                 </h2>
               </div>
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-3 rounded-md bg-accent-gold text-[#152A38] font-medium uppercase tracking-wide hover:bg-white transition-colors duration-200"
+              >
+                Book a free chemistry call
+              </a>
             </div>
             
             {/* Contact Information */}
             <div className="flex flex-col sm:flex-row justify-center items-center sm:items-start space-y-6 sm:space-y-0 sm:space-x-12">
               <div className="flex flex-col items-center text-center">
                 <span className="text-accent-gold mb-2 text-sm uppercase tracking-wide">Phone</span>
-                <a href="https://wa.me/27767394114" target="_blank" rel="noopener noreferrer" className="text-gray-200 hover:text-accent-gold transition-colors duration-200">
-                  +27 76 739 4114
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-gray-200 hover:text-accent-gold transition-colors duration-200">
+                  {PHONE_DISPLAY}
                 </a>
-                <span className="text-sm text-gray-300 mt-1">(Phone & WhatsApp)</span>
+                <span className="text-sm text-gray-300 mt-1">
+                  <a href={PHONE_TEL} className="underline underline-offset-4 hover:text-accent-gold">Call</a> or <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-accent-gold">WhatsApp</a>
+                </span>
               </div>
               <div className="flex flex-col items-center text-center">
                 <span className="text-accent-gold mb-2 text-sm uppercase tracking-wide">Email</span>
-                <a href="mailto:danelle@peopleintelligence.co.za" className="text-gray-200 hover:text-accent-gold transition-colors duration-200">
-                  danelle@peopleintelligence.co.za
+                <a href={`mailto:${EMAIL}`} className="text-gray-200 hover:text-accent-gold transition-colors duration-200">
+                  {EMAIL}
                 </a>
               </div>
               <div className="flex flex-col items-center text-center">

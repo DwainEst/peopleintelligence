@@ -6,7 +6,10 @@ import myceliumImage from "@/assets/hero-mycelium.webp";
 import lighthouseImage from "@/assets/hero-lighthouse.webp";
 import myceliumSmall from "@/assets/hero-mycelium-640.webp";
 import lighthouseSmall from "@/assets/hero-lighthouse-640.webp";
+import myceliumMedium from "@/assets/hero-mycelium-828.webp";
+import lighthouseMedium from "@/assets/hero-lighthouse-828.webp";
 import logoPath from "@/assets/logo.webp";
+import { CALENDLY_URL } from "@/lib/contact";
 
 interface HeroSectionProps {
   variant: "corporate" | "christian";
@@ -23,8 +26,8 @@ export default function HeroSection({ variant }: HeroSectionProps) {
       <img
         src={isCorporate ? myceliumImage : lighthouseImage}
         srcSet={isCorporate
-          ? `${myceliumSmall} 640w, ${myceliumImage} 1024w`
-          : `${lighthouseSmall} 640w, ${lighthouseImage} 1248w`}
+          ? `${myceliumSmall} 640w, ${myceliumMedium} 828w, ${myceliumImage} 1024w`
+          : `${lighthouseSmall} 640w, ${lighthouseMedium} 828w, ${lighthouseImage} 1248w`}
         sizes="100vw"
         width={isCorporate ? 1024 : 1248}
         height={isCorporate ? 576 : 832}
@@ -67,6 +70,14 @@ export default function HeroSection({ variant }: HeroSectionProps) {
 
                 <a href="#contact" className={`text-white ${isCorporate ? 'hover:text-accent-gold' : 'hover:text-gray-500'} transition-colors duration-200 text-sm font-medium uppercase tracking-wide ${isCorporate ? 'px-3 py-2' : 'pl-3 pr-0 py-2'}`}>
                   Contact
+                </a>
+                <a
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`ml-3 px-4 py-2 rounded-md text-sm font-medium uppercase tracking-wide transition-colors duration-200 ${isCorporate ? 'bg-accent-gold text-[#152A38] hover:bg-white' : 'bg-white text-[#1a384c] hover:bg-gray-200'}`}
+                >
+                  Book a call
                 </a>
               </div>
             </div>
@@ -118,6 +129,15 @@ export default function HeroSection({ variant }: HeroSectionProps) {
                 >
                   Contact
                 </a>
+                <a
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`block px-4 py-4 text-lg font-medium rounded-lg text-center ${isCorporate ? 'bg-accent-gold text-[#152A38]' : 'bg-[#1a384c] text-white'}`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  Book a chemistry call
+                </a>
               </div>
             </div>
           )}
@@ -129,12 +149,18 @@ export default function HeroSection({ variant }: HeroSectionProps) {
         <div className="text-center w-full max-w-6xl mx-auto">
           {isCorporate ? (
             <div className="space-y-6">
+              <h1 className="text-xs sm:text-sm lg:text-base uppercase tracking-[0.25em] text-accent-gold font-semibold">
+                Executive Leadership &amp; EQ Coaching
+              </h1>
               <p className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl leading-tight sm:leading-relaxed text-white font-medium tracking-wide">
                 Pathways to potential are not about striving harder, but about cultivating resilience, relationships, and awareness that make performance sustainable in every area of life.
               </p>
             </div>
           ) : (
             <div className="max-w-4xl mx-auto space-y-6">
+              <h1 className="text-xs sm:text-sm lg:text-base uppercase tracking-[0.25em] text-white font-semibold">
+                Christian Leadership Coaching
+              </h1>
               <p className="text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl leading-tight sm:leading-relaxed text-white font-medium tracking-wide">
                 We have an anchor that keeps the soul<br className="hidden sm:block" /><span className="sm:hidden"> </span>steadfast and sure while the billows roll
               </p>

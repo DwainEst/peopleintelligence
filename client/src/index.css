@@ -190,4 +190,15 @@
   .logo-scroll:hover .logo-track {
     animation-play-state: paused;
   }
+
+  /* Respect the visitor's "reduce motion" setting: stop the logo marquee and
+     let the strip scroll sideways by touch instead */
+  @media (prefers-reduced-motion: reduce) {
+    .logo-track {
+      animation: none;
+    }
+    .logo-scroll {
+      overflow-x: auto;
+    }
+  }
 }

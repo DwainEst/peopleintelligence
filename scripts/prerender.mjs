@@ -4,8 +4,10 @@
 // Runs automatically as part of `npm run build` (after `vite build`).
 // Output: ./dist/  -> upload the CONTENTS of this folder to GoDaddy public_html
 //
-// React still loads in the browser and takes over the page as before
-// (createRoot replaces the pre-rendered markup), so nothing changes for visitors.
+// In the browser React hydrates (reuses) this pre-rendered markup. After writing
+// the pages, the build loads each one and FAILS if React reports a hydration
+// mismatch, because a mismatch makes React redraw the whole page and slows the
+// first paint on mobile.
 
 import { createServer } from "node:http";
 import { readFile, writeFile, stat } from "node:fs/promises";
@@ -37,6 +39,8 @@ const PAGES = [
     title: "Christian Leadership Coaching SA | People Intelligence",
     description:
       "Faith-based leadership coaching, ministry team development and Christian leadership workshops with Danelle Esterhuizen. Book a coaching chemistry call today.",
+    image: "/og-christian-coaching.jpg",
+    imageAlt: "People Intelligence – Christian Leadership Coaching with Danelle Esterhuizen",
     sources: ["client/src/pages/christian-coaching.tsx"],
   },
   {
@@ -55,7 +59,7 @@ const template = await readFile(path.join(OUT, "index.html"), "utf8");
 const types = {
   ".html": "text/html", ".js": "application/javascript", ".css": "text/css",
   ".webp": "image/webp", ".png": "image/png", ".svg": "image/svg+xml",
-  ".ico": "image/x-icon", ".json": "application/json", ".webmanifest": "application/manifest+json",
+  ".ico": "image/x-icon", ".jpg": "image/jpeg", ".woff2": "font/woff2", ".json": "application/json", ".webmanifest": "application/manifest+json",
 };
 const server = createServer(async (req, res) => {
   const p = decodeURIComponent(new URL(req.url, "http://x").pathname);
@@ -133,6 +137,13 @@ for (const pg of PAGES) {
       .replace(/(<meta property="og:description" content=")[^"]*/, `$1${d}`)
       .replace(/(<meta name="twitter:description" content=")[^"]*/, `$1${d}`);
   }
+  if (pg.image) {
+    const img = SITE + pg.image;
+    html = html
+      .replace(/(<meta property="og:image" content=")[^"]*/, `$1${img}`)
+      .replace(/(<meta name="twitter:image" content=")[^"]*/, `$1${img}`);
+    if (pg.imageAlt) html = html.replace(/(<meta property="og:image:alt" content=")[^"]*/, `$1${escape(pg.imageAlt)}`);
+  }
   if (pg.noindex) {
     html = html
       .replace(/<meta name="robots" content="[^"]*">/, '<meta name="robots" content="noindex, follow">')
@@ -155,8 +166,36 @@ for (const pg of PAGES) {
   console.log(`✔ ${pg.route.padEnd(20)} -> ${pg.file.padEnd(24)} ${text.split(" ").length} words`);
 }
 
+// 3b. Hydration check: load each written page and fail on React errors
+//     (#418/#423/#425 = server/client mismatch) or any uncaught page error.
+const problems = [];
+for (const pg of PAGES) {
+  const check = await browser.newPage();
+  await check.route(/^https?:\/\/(?!localhost)/, (r) => r.abort());
+  check.on("pageerror", (e) => problems.push(`${pg.route}: ${e.message.split("\n")[0]}`));
+  check.on("console", (m) => {
+    if (m.type() === "error" && /hydrat|Minified React error #(418|423|425)/i.test(m.text()))
+      problems.push(`${pg.route}: ${m.text().split("\n")[0]}`);
+  });
+  // Serve the written file at the page's real route
+  await check.route(base + pg.route, (r) =>
+    r.fulfill({ path: path.join(OUT, pg.file), contentType: "text/html" })
+  );
+  await check.goto(base + pg.route, { waitUntil: "networkidle" });
+  await check.waitForTimeout(500);
+  await check.close();
+}
+
 await browser.close();
 server.close();
+
+if (problems.length) {
+  console.error("\n✘ Hydration check failed — pre-rendered HTML does not match what React renders:");
+  for (const p of problems) console.error("  " + p);
+  console.error("Tip: write `{`${text} `}<a>` instead of `{text} <a>` so text is one node.\n");
+  process.exit(1);
+}
+console.log("✔ hydration check passed"); 
 
 // 4. sitemap.xml — every indexable page, with the date its content last changed
 const shared = ["client/src/components", "client/src/assets"];
