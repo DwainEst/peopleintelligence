@@ -44,6 +44,14 @@ const PAGES = [
     sources: ["client/src/pages/christian-coaching.tsx"],
   },
   {
+    route: "/privacy",
+    file: "privacy.html",
+    title: "Privacy Notice | People Intelligence",
+    description:
+      "How People Intelligence collects, uses and protects your personal information under South Africa's Protection of Personal Information Act (POPIA).",
+    sources: ["client/src/pages/privacy.tsx"],
+  },
+  {
     route: "/__404__",
     file: "404.html",
     title: "Page not found | People Intelligence",
