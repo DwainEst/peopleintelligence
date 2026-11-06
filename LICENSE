@@ -1,6 +1,12 @@
-MIT License
-
 Copyright (c) 2025 Dwain Esterhuizen
+
+This repository contains two kinds of material, licensed differently.
+
+1. SOURCE CODE — MIT License
+
+The source code (files under client/src ending in .ts, .tsx or .css, the
+scripts/ folder, and the build configuration files) is licensed under the
+MIT License:
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +25,23 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+2. CONTENT AND BRANDING — ALL RIGHTS RESERVED
+
+The MIT License above does NOT apply to the website's content and branding,
+including:
+
+  - all written copy and page text,
+  - photographs and other images,
+  - the People Intelligence name, logo and visual identity,
+  - favicons and social-share images.
+
+These are Copyright (c) People Intelligence. All rights reserved. They may not
+be copied, reused or redistributed without prior written permission.
+
+Third-party logos (client organisations, accreditation and membership bodies)
+are trademarks of their respective owners, are shown with reference to past
+or current work and memberships, and are not licensed for any reuse.
+
+The Montserrat font in client/src/assets/fonts is licensed separately under
+the SIL Open Font License 1.1 by its authors.
