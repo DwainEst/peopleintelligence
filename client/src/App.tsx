@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import CorporateHome from "@/pages/corporate-home";
 import ChristianCoaching from "@/pages/christian-coaching";
 import NotFound from "@/pages/not-found";
+import Privacy from "@/pages/privacy";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -21,6 +22,7 @@ function Router() {
       <Switch>
         <Route path="/" component={CorporateHome} />
         <Route path="/christian-coaching" component={ChristianCoaching} />
+        <Route path="/privacy" component={Privacy} />
         <Route component={NotFound} />
       </Switch>
     </>

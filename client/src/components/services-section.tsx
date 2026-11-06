@@ -10,6 +10,7 @@ import enneagramLogo from "@/assets/accreditation-enneagram.webp";
 import gtdLogo from "@/assets/accreditation-gtd.webp";
 import insightsLogo from "@/assets/accreditation-insights.webp";
 import neurozoneLogo from "@/assets/accreditation-neurozone.webp";
+import { CALENDLY_URL } from "@/lib/contact";
 
 interface ServicesSectionProps {
   variant: "corporate" | "christian";
@@ -88,7 +89,7 @@ export default function ServicesSection({ variant }: ServicesSectionProps) {
                 Faith influences every area of our lives: work, family, leadership, conflict resolution, forgiveness, growth, and calling. Christian coaching provides a safe space to explore these dimensions with someone who understands that faith isn't compartmentalized from life—it's woven through the very heart of it.
               </p>
               <p className="text-lg leading-relaxed text-gray-200 font-light">
-                If you're seeking coaching that honours both your faith and your growth, I'd love to <a href="#contact" className={`border-b ${isCorporate ? 'border-accent-gold hover:text-accent-gold' : 'border-gray-500 hover:text-gray-500'} transition-colors duration-200`}>explore how we might work together</a>.
+                If you're seeking coaching that honours both your faith and your growth, I'd love to <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className={`border-b ${isCorporate ? 'border-accent-gold hover:text-accent-gold' : 'border-gray-500 hover:text-gray-500'} transition-colors duration-200`}>explore how we might work together</a>.
               </p>
             </div>
           </div>
@@ -116,7 +117,7 @@ export default function ServicesSection({ variant }: ServicesSectionProps) {
               {services[0].title}
             </h3>
             <p className={`${services[0].textColor} text-base sm:text-lg leading-relaxed font-normal`}>
-              {`${services[0].description} `}<a href="#contact" className="border-b border-primary-forest hover:text-primary-forest transition-colors duration-200">Schedule a chemistry call.</a>
+              {`${services[0].description} `}<a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="border-b border-primary-forest hover:text-primary-forest transition-colors duration-200">Schedule a chemistry call.</a>
             </p>
           </div>
 

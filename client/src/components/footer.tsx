@@ -110,6 +110,8 @@ export default function Footer({ variant }: FooterProps) {
         <div className="border-t border-gray-600 mt-4 pt-4 text-center">
           <p className="text-xs text-gray-300 tracking-tight">
             © 2025 People Intelligence. All rights reserved.
+            <span aria-hidden="true"> · </span>
+            <a href="/privacy" className="underline underline-offset-2 hover:text-white">Privacy notice</a>
           </p>
         </div>
       </div>

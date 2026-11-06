@@ -1,5 +1,6 @@
 import HeroSection from "@/components/hero-section";
 import ServicesSection from "@/components/services-section";
+import { CALENDLY_URL, EMAIL, PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from "@/lib/contact";
 
 import Footer from "@/components/footer";
 import enneagramLogo from "@/assets/accreditation-enneagram.webp";
@@ -35,7 +36,7 @@ export default function ChristianCoaching() {
                 I've had the privilege of partnering with clients across the entire career spectrum—from graduates taking their first professional steps to senior leaders navigating complex decisions. My approach is both adaptable and deeply personal, grounded in curiosity, challenge, and unwavering support. I'm particularly fascinated by neuroscience and how our God-designed brain-body system empowers us to build and break habits, develop resilience, and create sustainable, life-giving patterns of living and working.
               </p>
               <p className="text-base sm:text-lg leading-relaxed text-gray-200 font-light">
-                If you'd like to have a coaching chemistry call to see if we're a good fit, <a href="#contact" className="border-b border-gray-500 hover:text-gray-500 transition-colors duration-200">please get in touch</a>.
+                If you'd like to have a coaching chemistry call to see if we're a good fit, <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="border-b border-gray-500 hover:text-gray-500 transition-colors duration-200">book a time that suits you</a>.
               </p>
             </div>
           </div>
@@ -113,21 +114,31 @@ export default function ChristianCoaching() {
                   GET IN TOUCH
                 </h2>
               </div>
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-3 rounded-md bg-[#1a384c] text-white font-medium uppercase tracking-wide hover:bg-black transition-colors duration-200"
+              >
+                Book a free chemistry call
+              </a>
             </div>
             
             {/* Contact Information */}
             <div className="flex flex-col sm:flex-row justify-center items-center sm:items-start space-y-6 sm:space-y-0 sm:space-x-12">
               <div className="flex flex-col items-center text-center">
                 <span className="text-black mb-2 text-sm uppercase tracking-wide">Phone</span>
-                <span className="text-white hover:text-gray-300 transition-colors duration-200">
-                  +27 76 739 4114
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-white underline-offset-4 hover:underline">
+                  {PHONE_DISPLAY}
+                </a>
+                <span className="text-sm text-white mt-1">
+                  <a href={PHONE_TEL} className="underline underline-offset-4">Call</a> or <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">WhatsApp</a>
                 </span>
-                <span className="text-sm text-white mt-1">(Phone & WhatsApp)</span>
               </div>
               <div className="flex flex-col items-center text-center">
                 <span className="text-black mb-2 text-sm uppercase tracking-wide">Email</span>
-                <a href="mailto:danelle@peopleintelligence.co.za" className="text-white hover:text-gray-300 transition-colors duration-200">
-                  danelle@peopleintelligence.co.za
+                <a href={`mailto:${EMAIL}`} className="text-white underline-offset-4 hover:underline">
+                  {EMAIL}
                 </a>
               </div>
               <div className="flex flex-col items-center text-center">

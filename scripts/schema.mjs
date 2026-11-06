@@ -34,7 +34,7 @@ const organization = {
     "Executive leadership coaching, EQ (emotional intelligence) coaching, team coaching, facilitation and training. Online via Zoom or Teams, face to face in Cape Town, and across South Africa by arrangement.",
   url: `${SITE}/`,
   logo: `${SITE}/logo.webp`,
-  image: `${SITE}/people-intelligence-og.webp`,
+  image: `${SITE}/og-home.jpg`,
   email: "danelle@peopleintelligence.co.za",
   telephone: "+27767394114",
   founder: { "@id": PERSON },
@@ -137,11 +137,12 @@ export function buildSchema(pg, { title, description }) {
   const graph = [organization, person, website];
 
   if (pg.route === "/") {
-    graph.push(webPage("/", title, description, { primaryImageOfPage: `${SITE}/people-intelligence-og.webp` }));
+    graph.push(webPage("/", title, description, { primaryImageOfPage: `${SITE}/og-home.jpg` }));
   } else {
     graph.push(
       webPage(pg.route, title, description, {
         breadcrumb: { "@id": `${SITE}${pg.route}#breadcrumb` },
+        ...(pg.image ? { primaryImageOfPage: `${SITE}${pg.image}` } : {}),
       }),
       {
         "@type": "BreadcrumbList",

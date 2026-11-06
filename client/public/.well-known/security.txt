@@ -1,0 +1,6 @@
+# Security contact for peopleintelligence.co.za (RFC 9116)
+Contact: mailto:danelle@peopleintelligence.co.za
+Expires: 2027-11-06T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://www.peopleintelligence.co.za/.well-known/security.txt
+Policy: https://www.peopleintelligence.co.za/privacy
