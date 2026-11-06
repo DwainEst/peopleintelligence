@@ -141,32 +141,19 @@ export default function CorporateHome() {
           <div className="relative">
             <div className="logo-scroll">
               <div className="logo-track">
-                <img src={africanUnionLogo} alt="African Union" className="logo-item" />
-                <img src={allanGrayLogo} alt="Allan Gray" className="logo-item" />
-                <img src={angloGoldLogo} alt="AngloGold Ashanti" className="logo-item" />
-                <img src={discoveryLogo} alt="Discovery Vitality" className="logo-item" />
-                <img src={feedzaiLogo} alt="Feedzai" className="logo-item" />
-                <img src={officeLogo} alt="Microsoft Office" className="logo-item" />
-                <img src={pepsicoLogo} alt="PepsiCo" className="logo-item" />
-                <img src={philipMorrisLogo} alt="Philip Morris International" className="logo-item" />
-                <img src={sanlamLogo} alt="Sanlam" className="logo-item" />
-                <img src={sarbLogo} alt="South African Reserve Bank" className="logo-item" />
-                <img src={standardBankLogo} alt="Standard Bank" className="logo-item" />
-                <img src={truworthsLogo} alt="Truworths International" className="logo-item" />
-                
-                {/* Duplicate for seamless scroll */}
-                <img src={africanUnionLogo} alt="African Union" className="logo-item" />
-                <img src={allanGrayLogo} alt="Allan Gray" className="logo-item" />
-                <img src={angloGoldLogo} alt="AngloGold Ashanti" className="logo-item" />
-                <img src={discoveryLogo} alt="Discovery Vitality" className="logo-item" />
-                <img src={feedzaiLogo} alt="Feedzai" className="logo-item" />
-                <img src={officeLogo} alt="Microsoft Office" className="logo-item" />
-                <img src={pepsicoLogo} alt="PepsiCo" className="logo-item" />
-                <img src={philipMorrisLogo} alt="Philip Morris International" className="logo-item" />
-                <img src={sanlamLogo} alt="Sanlam" className="logo-item" />
-                <img src={sarbLogo} alt="South African Reserve Bank" className="logo-item" />
-                <img src={standardBankLogo} alt="Standard Bank" className="logo-item" />
-                <img src={truworthsLogo} alt="Truworths International" className="logo-item" />
+                {[...clientLogos, ...clientLogos].map((logo, i) => (
+                  <img
+                    key={i}
+                    src={logo.src}
+                    alt={i < clientLogos.length ? logo.alt : ""}
+                    aria-hidden={i >= clientLogos.length || undefined}
+                    width={logo.w}
+                    height={logo.h}
+                    loading="lazy"
+                    decoding="async"
+                    className="logo-item"
+                  />
+                ))}
               </div>
             </div>
           </div>
