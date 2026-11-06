@@ -121,35 +121,6 @@ export default function CorporateHome() {
                     aria-hidden={i >= clientLogos.length || undefined}
                     width={logo.w}
                     height={logo.h}
-                    loading="lazy"
-                    decoding="async"
-                    className="logo-item"
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Trusted by Leading Organisations */}
-      <section className="bg-accent-gold py-8 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-gray-700 font-medium mb-6">Trusted by Leading Organisations</p>
-          
-          {/* Scrolling Logos */}
-          <div className="relative">
-            <div className="logo-scroll">
-              <div className="logo-track">
-                {[...clientLogos, ...clientLogos].map((logo, i) => (
-                  <img
-                    key={i}
-                    src={logo.src}
-                    alt={i < clientLogos.length ? logo.alt : ""}
-                    aria-hidden={i >= clientLogos.length || undefined}
-                    width={logo.w}
-                    height={logo.h}
-                    loading="lazy"
                     decoding="async"
                     className="logo-item"
                   />
