@@ -131,6 +131,15 @@ for (const pg of PAGES) {
       .replace(/(<meta property="og:url" content=")[^"]*/, `$1${url}`)
       .replace(/(<meta name="twitter:url" content=")[^"]*/, `$1${url}`);
   }
+  // hreflang: one English (South Africa) version per page, plus x-default.
+  // Each page points at its own canonical URL (self-referencing).
+  if (!pg.noindex) {
+    const url = SITE + (pg.route === "/" ? "/" : pg.route);
+    html = html.replace(
+      /(<link rel="canonical"[^>]*>)/,
+      `$1\n      <link rel="alternate" hreflang="en-za" href="${url}">\n      <link rel="alternate" hreflang="x-default" href="${url}">`
+    );
+  }
   if (pg.title) {
     const t = escape(pg.title);
     html = html
