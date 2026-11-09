@@ -41,7 +41,7 @@ ErrorDocument 404 /404.html
     Header always set Strict-Transport-Security "max-age=31536000" env=HTTPS
 
     # Content Security Policy (CSP) - tightened for security
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self'; font-src 'self'; img-src 'self' https:; connect-src 'self' https://cloudflareinsights.com; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; media-src 'self'; form-action 'self'; upgrade-insecure-requests;"
+        Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://static.cloudflareinsights.com https://analytics.ahrefs.com; style-src 'self'; font-src 'self'; img-src 'self' https:; connect-src 'self' https://cloudflareinsights.com https://analytics.ahrefs.com; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; media-src 'self'; form-action 'self'; upgrade-insecure-requests;"
 
     # Prevent clickjacking
     Header always set X-Frame-Options "SAMEORIGIN"
