@@ -2,7 +2,7 @@ import logoPath from "@/assets/logo.webp";
 import { CALENDLY_URL, EMAIL } from "@/lib/contact";
 
 // POPIA privacy notice. Keep "Last updated" current whenever this text changes.
-const LAST_UPDATED = "6 November 2026";
+const LAST_UPDATED = "9 November 2026";
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -64,7 +64,7 @@ export default function Privacy() {
             advertising cookies and without building a profile of you.
           </p>
           <p>
-            Anything you share during coaching is kept confidential and handled as set out in your coaching agreement.
+            Anything you share during coaching is kept strictly confidential and handled as set out in your coaching agreement.
           </p>
         </Section>
 
@@ -72,7 +72,7 @@ export default function Privacy() {
           <p>
             This website does not use advertising or tracking cookies. Our security provider may set a strictly
             necessary cookie to tell genuine visitors apart from automated bots. It does not identify you personally and
-            does not require consent.
+            does not require consent. Our analytics provider (Ahrefs) may also use aggregated, non-identifying statistics to improve its own services.
           </p>
         </Section>
 
@@ -80,6 +80,7 @@ export default function Privacy() {
           <p>We never sell your personal information. We share it only with service providers that help us operate:</p>
           <ul className="list-disc pl-6 space-y-1">
             <li>Cloudflare: website delivery, security and visit statistics</li>
+            <li>Ahrefs: website visit statistics</li>
             <li>GoDaddy: website hosting</li>
             <li>Calendly: booking chemistry calls</li>
             <li>WhatsApp (Meta), if you choose to contact us that way</li>
